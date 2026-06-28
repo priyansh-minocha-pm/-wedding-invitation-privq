@@ -1,22 +1,54 @@
 /* ===========================================
-   Priyansh ❤️ Vanshika Wedding Website
+   Priyansh ❤️ Vanshika Wedding Invitation
 =========================================== */
 
-// Wedding Date
-const weddingDate = new Date("August 23, 2026 20:00:00").getTime();
+// ----------------------------
+// Invitation Opening
+// ----------------------------
 
-function updateCountdown() {
+document.addEventListener("DOMContentLoaded", function () {
+
+    const overlay = document.getElementById("invitationOverlay");
+    const openBtn = document.getElementById("openInvitation");
+
+    if (overlay && openBtn) {
+
+        document.body.style.overflow = "hidden";
+
+        openBtn.addEventListener("click", function () {
+
+            overlay.classList.add("hide");
+
+            document.body.style.overflow = "auto";
+
+            setTimeout(function () {
+
+                overlay.remove();
+
+            }, 800);
+
+        });
+
+    }
+
+});
+
+// ----------------------------
+// Countdown
+// ----------------------------
+
+const weddingDate = new Date("2026-08-23T20:00:00").getTime();
+
+function countdown() {
 
     const now = new Date().getTime();
 
     const distance = weddingDate - now;
 
-    if (distance < 0) {
+    if (distance <= 0) {
 
-        document.querySelector(".timer").innerHTML =
-            "<h2>🎉 We Are Married! 🎉</h2>";
-
-        clearInterval(countdownInterval);
+        document.querySelector(".countdown-grid").innerHTML =
+            "<h2>🎉 We Are Married 🎉</h2>";
 
         return;
 
@@ -25,154 +57,79 @@ function updateCountdown() {
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
     const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) /
-        (1000 * 60 * 60)
+        (distance % (1000 * 60 * 60 * 24))
+        / (1000 * 60 * 60)
     );
 
     const minutes = Math.floor(
-        (distance % (1000 * 60 * 60)) /
-        (1000 * 60)
+        (distance % (1000 * 60 * 60))
+        / (1000 * 60)
     );
 
     const seconds = Math.floor(
-        (distance % (1000 * 60)) / 1000
+        (distance % (1000 * 60))
+        / 1000
     );
 
-    document.getElementById("days").innerHTML = days;
-    document.getElementById("hours").innerHTML = hours;
-    document.getElementById("minutes").innerHTML = minutes;
-    document.getElementById("seconds").innerHTML = seconds;
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
 
 }
 
-updateCountdown();
+countdown();
 
-const countdownInterval = setInterval(updateCountdown, 1000);
+setInterval(countdown, 1000);
 
 
-/* ===========================================
-   Smooth Scroll
-=========================================== */
+// ----------------------------
+// RSVP
+// ----------------------------
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+const form = document.getElementById("rsvpForm");
 
-    anchor.addEventListener("click", function (e) {
+if (form) {
 
-        e.preventDefault();
+form.addEventListener("submit", function(e){
 
-        const target = document.querySelector(this.getAttribute("href"));
+e.preventDefault();
 
-        if (target) {
+alert("❤️ Thank you for your RSVP!");
 
-            target.scrollIntoView({
-
-                behavior: "smooth"
-
-            });
-
-        }
-
-    });
+form.reset();
 
 });
-
-
-/* ===========================================
-   RSVP Form
-=========================================== */
-
-const form = document.querySelector("form");
-
-form.addEventListener("submit", function (e) {
-
-    e.preventDefault();
-
-    const guestName = form.querySelector("input").value;
-
-    alert(
-        "💖 Thank you " +
-        guestName +
-        "!\\n\\nYour RSVP has been received."
-    );
-
-    form.reset();
-
-});
-
-
-/* ===========================================
-   Fade In On Scroll
-=========================================== */
-
-const observer = new IntersectionObserver(
-
-(entries) => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-            entry.target.classList.add("show");
-
-        }
-
-    });
-
-},
-
-{
-
-    threshold: 0.15
 
 }
 
-);
 
-document.querySelectorAll(".card,.gallery-placeholder,.rsvp,.venue,.thanks")
-.forEach(el => {
+// ----------------------------
+// Smooth Fade
+// ----------------------------
 
-    el.classList.add("hidden");
+const cards = document.querySelectorAll(".event-card,.box,.gallery-placeholder");
 
-    observer.observe(el);
+const observer = new IntersectionObserver((entries)=>{
 
-});
+entries.forEach(entry=>{
 
+if(entry.isIntersecting){
 
-/* ===========================================
-   Floating Button Effect
-=========================================== */
+entry.target.classList.add("show");
 
-document.querySelectorAll(".btn").forEach(btn => {
-
-    btn.addEventListener("mouseenter", () => {
-
-        btn.style.transform = "translateY(-5px) scale(1.03)";
-
-    });
-
-    btn.addEventListener("mouseleave", () => {
-
-        btn.style.transform = "translateY(0px) scale(1)";
-
-    });
+}
 
 });
 
+},{
+threshold:0.15
+});
 
-/* ===========================================
-   Console Greeting
-=========================================== */
+cards.forEach(card=>{
 
-console.log(
-`
-=======================================
+card.classList.add("hidden");
 
-💍 Priyansh ❤️ Vanshika
+observer.observe(card);
 
-Wedding Invitation Website
-
-Made with ❤️
-
-=======================================
-`
-);
+});
