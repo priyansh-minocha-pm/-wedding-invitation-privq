@@ -1,0 +1,302 @@
+/* =========================
+   Wedding Invitation Website
+   Priyansh ❤️ Vanshika
+========================= */
+
+:root{
+
+    --ivory:#FDFBF7;
+    --gold:#C8A96A;
+    --dark:#2f2f2f;
+    --white:#ffffff;
+    --light:#f8f6f1;
+    --shadow:0 15px 40px rgba(0,0,0,.12);
+
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:var(--ivory);
+    color:var(--dark);
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+
+}
+
+h1,h2,h3{
+
+    font-family:'Cormorant Garamond',serif;
+    letter-spacing:1px;
+
+}
+
+section{
+
+    padding:90px 8%;
+
+}
+
+/*=========================
+ HERO
+=========================*/
+
+.hero{
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    position:relative;
+
+    background:
+
+    linear-gradient(rgba(255,255,255,.55),
+    rgba(255,255,255,.70)),
+
+    url("../images/hero.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+.overlay{
+
+    position:absolute;
+    inset:0;
+    background:rgba(255,255,255,.20);
+
+}
+
+.hero-content{
+
+    position:relative;
+    z-index:2;
+    max-width:700px;
+
+}
+
+.welcome{
+
+    text-transform:uppercase;
+    letter-spacing:4px;
+    color:var(--gold);
+    margin-bottom:15px;
+
+}
+
+.hero h1{
+
+    font-size:78px;
+    margin-bottom:20px;
+
+}
+
+.hero h1 span{
+
+    color:#d64060;
+
+}
+
+.hero h3{
+
+    font-size:34px;
+    font-weight:500;
+    margin-bottom:25px;
+
+}
+
+.date{
+
+    font-size:22px;
+    line-height:2;
+    margin-bottom:35px;
+
+}
+
+/*=========================
+ BUTTON
+=========================*/
+
+.btn{
+
+    display:inline-block;
+
+    padding:15px 40px;
+
+    background:var(--gold);
+
+    color:#fff;
+
+    text-decoration:none;
+
+    border-radius:40px;
+
+    transition:.4s;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+    background:#b79252;
+
+}
+
+/*=========================
+ COUNTDOWN
+=========================*/
+
+.countdown{
+
+    text-align:center;
+    background:var(--light);
+
+}
+
+.countdown h2{
+
+    font-size:50px;
+    margin-bottom:60px;
+
+}
+
+.timer{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+}
+
+.time-box{
+
+    width:150px;
+
+    background:#fff;
+
+    padding:35px 20px;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.time-box span{
+
+    display:block;
+
+    font-size:55px;
+
+    color:var(--gold);
+
+    font-family:'Cormorant Garamond',serif;
+
+}
+
+.time-box small{
+
+    font-size:18px;
+
+}
+
+/*=========================
+ EVENTS
+=========================*/
+
+.events{
+
+    text-align:center;
+
+}
+
+.events h2{
+
+    font-size:52px;
+    margin-bottom:60px;
+
+}
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+
+}
+
+.card{
+
+    background:#fff;
+
+    padding:45px 30px;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.card i{
+
+    font-size:45px;
+
+    color:var(--gold);
+
+    margin-bottom:20px;
+
+}
+
+.card h3{
+
+    font-size:34px;
+    margin-bottom:15px;
+
+}
+
+.card p{
+
+    line-height:1.8;
+
+}
