@@ -1,0 +1,385 @@
+/* ==========================
+   GALLERY
+========================== */
+
+.gallery{
+
+    text-align:center;
+
+    background:#faf7f2;
+
+}
+
+.gallery h2{
+
+    font-size:52px;
+
+    margin-bottom:50px;
+
+}
+
+.gallery-placeholder{
+
+    max-width:650px;
+
+    margin:auto;
+
+    padding:60px 30px;
+
+    background:#fff;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.gallery-placeholder i{
+
+    font-size:70px;
+
+    color:var(--gold);
+
+    margin-bottom:20px;
+
+}
+
+.gallery-placeholder h3{
+
+    font-size:36px;
+
+    margin-bottom:10px;
+
+}
+
+.gallery-placeholder p{
+
+    font-size:18px;
+
+    color:#666;
+
+}
+
+/* ==========================
+   VENUE
+========================== */
+
+.venue{
+
+    text-align:center;
+
+}
+
+.venue h2{
+
+    font-size:52px;
+
+    margin-bottom:20px;
+
+}
+
+.venue h3{
+
+    font-size:40px;
+
+    color:var(--gold);
+
+    margin-bottom:10px;
+
+}
+
+.venue p{
+
+    font-size:20px;
+
+    margin-bottom:30px;
+
+}
+
+/* ==========================
+   RSVP
+========================== */
+
+.rsvp{
+
+    background:#faf7f2;
+
+    text-align:center;
+
+}
+
+.rsvp h2{
+
+    font-size:52px;
+
+    margin-bottom:40px;
+
+}
+
+.rsvp form{
+
+    max-width:650px;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.rsvp input,
+.rsvp select,
+.rsvp textarea{
+
+    padding:18px;
+
+    border:1px solid #ddd;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    font-family:'Poppins',sans-serif;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.rsvp input:focus,
+.rsvp select:focus,
+.rsvp textarea:focus{
+
+    border-color:var(--gold);
+
+    box-shadow:0 0 8px rgba(200,169,106,.35);
+
+}
+
+.rsvp textarea{
+
+    resize:none;
+
+}
+
+/* ==========================
+   THANK YOU
+========================== */
+
+.thanks{
+
+    text-align:center;
+
+}
+
+.thanks h2{
+
+    font-size:52px;
+
+    margin-bottom:20px;
+
+}
+
+.thanks p{
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
+}
+
+.thanks h3{
+
+    color:var(--gold);
+
+    font-size:34px;
+
+    margin-bottom:15px;
+
+}
+
+.thanks h1{
+
+    font-size:58px;
+
+}
+
+/* ==========================
+   SIMPLE FADE ANIMATION
+========================== */
+
+.hero-content,
+.card,
+.gallery-placeholder,
+.rsvp form,
+.time-box{
+
+    animation:fadeUp 1s ease both;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================
+   MOBILE RESPONSIVE
+========================== */
+
+@media(max-width:992px){
+
+    .hero h1{
+
+        font-size:58px;
+
+    }
+
+    .hero h3{
+
+        font-size:28px;
+
+    }
+
+    .countdown h2,
+    .events h2,
+    .gallery h2,
+    .venue h2,
+    .rsvp h2,
+    .thanks h2{
+
+        font-size:42px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    section{
+
+        padding:70px 25px;
+
+    }
+
+    .hero{
+
+        height:auto;
+
+        padding:120px 20px;
+
+    }
+
+    .hero h1{
+
+        font-size:44px;
+
+    }
+
+    .hero h3{
+
+        font-size:24px;
+
+    }
+
+    .date{
+
+        font-size:18px;
+
+    }
+
+    .timer{
+
+        gap:15px;
+
+    }
+
+    .time-box{
+
+        width:130px;
+
+        padding:25px;
+
+    }
+
+    .time-box span{
+
+        font-size:42px;
+
+    }
+
+    .thanks h1{
+
+        font-size:40px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .hero h1{
+
+        font-size:34px;
+
+    }
+
+    .hero h3{
+
+        font-size:20px;
+
+    }
+
+    .countdown h2,
+    .events h2,
+    .gallery h2,
+    .venue h2,
+    .rsvp h2,
+    .thanks h2{
+
+        font-size:34px;
+
+    }
+
+    .time-box{
+
+        width:100px;
+
+        padding:20px;
+
+    }
+
+    .time-box span{
+
+        font-size:32px;
+
+    }
+
+    .card{
+
+        padding:30px 20px;
+
+    }
+
+}
